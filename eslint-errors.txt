@@ -1,0 +1,44 @@
+
+> cafe-3d-menu@0.0.0 lint
+> eslint .
+
+
+E:\Cafe\cafe-3d-menu\src\components\CategoryTabs.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\FoodCard.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\FoodGrid.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Footer.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\GifPlayer.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Hero.jsx
+    2:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                    no-unused-vars
+   27:9   error    'frameInterval' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                    no-unused-vars
+   48:11  error    'rect' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                             no-unused-vars
+   50:11  error    'windowHeight' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                     no-unused-vars
+  153:6   warning  React Hook useEffect has a missing dependency: 'handleScroll'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+E:\Cafe\cafe-3d-menu\src\components\Hero3D.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Locations.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Menu.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Navbar.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+E:\Cafe\cafe-3d-menu\src\components\Serenity.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 15 problems (14 errors, 1 warning)
+

@@ -1,0 +1,83 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        cafe: {
+          900: '#151311',
+          800: '#26221c',
+          700: '#3a3329',
+          600: '#52493b',
+          accent: '#c89a6c',
+          accentHover: '#e0b388',
+          light: '#fdfbf7',
+        },
+        // Aura Cafe theme colors
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f7f3ee",
+        "on-error-container": "#93000a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "surface-container-highest": "#e6e2dd",
+        "tertiary-fixed-dim": "#debec7",
+        "tertiary-fixed": "#fbdae3",
+        "on-primary-container": "#95a390",
+        "secondary-fixed-dim": "#e9c176",
+        "on-surface-variant": "#444842",
+        "on-secondary-fixed-variant": "#5d4201",
+        "on-primary-fixed-variant": "#3e4a3b",
+        "surface-container": "#f1ede8",
+        "on-secondary-container": "#785a1a",
+        "on-background": "#1c1c19",
+        "tertiary-container": "#453037",
+        "on-surface": "#1c1c19",
+        "surface": "#fdf9f4",
+        "surface-dim": "#ddd9d5",
+        "primary-container": "#2d392b",
+        "on-primary": "#ffffff",
+        "on-tertiary-container": "#b497a0",
+        "inverse-surface": "#31302d",
+        "surface-bright": "#fdf9f4",
+        "on-tertiary-fixed-variant": "#574148",
+        "primary-fixed-dim": "#bdcbb7",
+        "surface-variant": "#e6e2dd",
+        "secondary-container": "#fed488",
+        "on-tertiary": "#ffffff",
+        "primary-fixed": "#d9e7d2",
+        "on-primary-fixed": "#131e12",
+        "tertiary": "#2e1b22",
+        "outline-variant": "#c4c8bf",
+        "secondary-fixed": "#ffdea5",
+        "error": "#ba1a1a",
+        "inverse-primary": "#bdcbb7",
+        "outline": "#747871",
+        "on-secondary": "#ffffff",
+        "inverse-on-surface": "#f4f0eb",
+        "background": "#fdf9f4",
+        "secondary": "#775a19",
+        "primary": "#182317",
+        "surface-tint": "#556252",
+        "surface-container-high": "#ebe8e3",
+        "on-tertiary-fixed": "#28161d",
+        "on-secondary-fixed": "#261900"
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+        headline: ['Newsreader', 'serif'],
+        body: ['Plus Jakarta Sans', 'sans-serif'],
+        label: ['Plus Jakarta Sans', 'sans-serif']
+      },
+      borderRadius: {
+        lg: '0.5rem',
+        xl: '0.75rem',
+        full: '9999px'
+      }
+    },
+  },
+  plugins: [],
+}

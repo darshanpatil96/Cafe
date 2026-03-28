@@ -1,0 +1,203 @@
+/* Hero Section Enhanced Animations */
+
+/* GPU Acceleration for all animated elements */
+.hero-animated-element {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Scroll Parallax Layers */
+.hero-background-layer {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.1s linear;
+}
+
+.hero-cup-layer {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.1s linear;
+}
+
+.hero-steam-layer {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.1s linear;
+}
+
+/* Mouse Parallax Effects */
+.hero-cup-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hero-cup-container:hover {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Steam Floating Animation */
+@keyframes steamFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+.steam-overlay {
+  animation: steamFloat 4s ease-in-out infinite;
+}
+
+.steam-particle {
+  animation: steamFloat 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Performance Optimizations */
+.hero-frame-image {
+  image-rendering: -webkit-optimize-contrast;
+  will-change: transform;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .hero-cup-container {
+    transform: none !important;
+  }
+  
+  .hero-background-layer,
+  .hero-cup-layer,
+  .hero-steam-layer {
+    transform: none !important;
+  }
+  
+  .steam-overlay {
+    animation-duration: 6s;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-frame-image {
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animated-element {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .steam-overlay,
+  .steam-particle {
+    animation: none;
+  }
+}
+
+/* Scroll Performance */
+.hero-section {
+  contain: layout style paint;
+  will-change: scroll-position;
+}
+
+/* Intersection Observer Performance */
+.hero-observer-target {
+  isolation: isolate;
+}
+
+/* Frame Animation Optimization */
+.hero-frame-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-frame-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Parallax Container */
+.hero-parallax-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Depth Layers */
+.hero-layer-background {
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.hero-layer-midground {
+  z-index: 2;
+}
+
+.hero-layer-foreground {
+  z-index: 3;
+}
+
+/* Smooth Transitions */
+.hero-smooth-transform {
+  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Effects */
+.hero-cup-container:hover .hero-frame-image {
+  filter: brightness(1.05) contrast(1.02);
+}
+
+/* Focus States for Accessibility */
+.hero-cup-container:focus-within {
+  outline: 2px solid rgba(254, 212, 136, 0.5);
+  outline-offset: 4px;
+}
+
+/* Loading States */
+.hero-loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll Progress Indicator (Optional) */
+.hero-scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #fea47f, #252a34);
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* Performance Monitoring Classes */
+.hero-performance-high {
+  /* High performance mode */
+}
+
+.hero-performance-medium {
+  /* Medium performance mode - reduce animation complexity */
+  animation-duration: 2s;
+}
+
+.hero-performance-low {
+  /* Low performance mode - minimal animations */
+  animation: none;
+  transition: none;
+}
