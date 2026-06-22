@@ -128,24 +128,33 @@ const Hero = () => {
       <motion.div 
         className="relative z-20 container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
       >
-        <div className="lg:col-span-7 lg:pr-12">
-          <motion.span 
-            className="inline-block font-label text-xs tracking-[0.3em] uppercase text-orange-200 mb-6 border-l-2 border-orange-200/40 pl-4"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+        <div className="lg:col-span-7">
+          <motion.div
+            className="inline-flex items-center gap-2 bg-orange-200/10 border border-orange-200/30 text-orange-200 text-[10px] tracking-[0.2em] uppercase px-4.5 py-2 rounded-full mb-6 font-extrabold"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Established 2024
-          </motion.span>
-          
+            <span className="animate-pulse text-xs">⚡</span> QR Table Ordering Available
+          </motion.div>
+
           <motion.h1 
-            className="font-headline text-6xl md:text-8xl leading-tight text-stone-100 mb-8 -ml-1"
+            className="font-headline text-6xl md:text-8xl leading-tight text-stone-100 mb-4 -ml-1 uppercase tracking-tight"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Aura: <span className="italic font-light">Signature</span> <br/>Blend
+            Veloura Café
           </motion.h1>
+          
+          <motion.h2
+            className="font-serif italic text-2xl md:text-4xl text-orange-200 mb-8 font-light tracking-wide"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
+            Crafted Moments. Exceptional Coffee.
+          </motion.h2>
           
           <motion.p 
             className="font-body text-lg text-stone-400 max-w-lg mb-12 leading-relaxed font-light"
@@ -153,7 +162,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            A sensory journey through the highlands. Our signature dark roast features notes of charred oak, Madagascar vanilla, and a silken chocolate finish.
+            A sensory journey through the highlands. Our signature reserve roasts feature notes of charred oak, Madagascar vanilla caviar, and a silken cacao finish.
           </motion.p>
           
           <motion.div 
@@ -166,21 +175,41 @@ const Hero = () => {
               ref={magnet1.ref}
               style={magnet1.style}
               onMouseLeave={magnet1.onMouseLeave}
+              onClick={(e) => handleNavClick(e, '#menu')}
               data-cursor="magnetic"
               className="bg-orange-200 text-stone-950 px-10 py-4 rounded-full font-label text-sm font-extrabold tracking-widest uppercase viscous-hover hover:bg-white hover:shadow-[0_0_30px_rgba(254,212,136,0.3)]"
             >
-              Explore the Roast
+              Order Now
             </motion.button>
             <motion.button 
               ref={magnet2.ref}
               style={magnet2.style}
               onMouseLeave={magnet2.onMouseLeave}
-              onClick={(e) => handleNavClick(e, '#story')}
+              onClick={(e) => handleNavClick(e, '#reserve')}
               data-cursor="magnetic"
               className="border border-stone-700 text-stone-100 px-10 py-4 rounded-full font-label text-sm font-bold tracking-widest uppercase viscous-hover hover:bg-stone-800"
             >
-              Our Story
+              Reserve Table
             </motion.button>
+          </motion.div>
+
+          <motion.div 
+            className="flex flex-wrap gap-x-6 gap-y-3 mt-12 border-t border-stone-800/60 pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            {[
+              'Scan QR & Order',
+              'Freshly Prepared',
+              'Served Directly To Your Table',
+              'Real-Time Order Tracking'
+            ].map(feat => (
+              <div key={feat} className="flex items-center gap-2 text-stone-400 text-xs font-light">
+                <span className="material-symbols-outlined text-orange-200/80 text-sm font-bold">check</span>
+                <span>{feat}</span>
+              </div>
+            ))}
           </motion.div>
         </div>
         

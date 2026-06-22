@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ImageWithFallback from './ImageWithFallback';
+import storyInterior from '../assets/images/story-interior.webp';
+import storyPour from '../assets/images/story-pour.webp';
 
 const Serenity = () => {
   return (
@@ -15,24 +18,34 @@ const Serenity = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="grid grid-cols-2 gap-4">
-              <motion.img 
-                className="rounded-3xl w-full h-64 object-cover mt-12"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmevTCzD6K1FvOThIbdmpMkdiYzO0Hxeo69WsBND3KPFFahluLlf1WohMe3WaF_aEsoNvHHaLqhb2WMisqAd6ijil4XuPDy4mLiUEWRPyhF5NGqi_s2RazKu1QmOtUcz67CGn3UrXGweaiznNvvG6KgBTtTf-Q6yCL3NKs-_h48fnG75WV7wAS8q3-L3A-I8idRw_hKp5uDtwPwK3Xl0ItIDxBLdtOUZ9fSYgtWu4LmE0DFER0K2vfDW1Ga8GPFC3Ithbgo3hA2w" 
-                alt="minimalist cafe interior with soft morning light hitting clean wooden tables and stone walls"
+              <motion.div
+                className="rounded-3xl overflow-hidden w-full h-64 mt-12"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-              />
-              <motion.img 
-                className="rounded-3xl w-full h-80 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQnlIBwztFLiZxxRJF6sj3zZY8PtrVkckB8T3mnashUBgfwAWbx7ypFhoRRId5lkAabtpUSUSXUhTkp2S3z_awBTm47bb382YEc07iW3saJcnVFpr6h1Px4zHbj9A76ylXJanMyl_BkKyQKxxU9vIlp1eIwwH2QBJbSgCI9CZmrG38j8xy29Kwp9qoGAS2LisZhu-4dK8I_AluNQTJ-k7ABYw0VJVnVNobvzVdep9QBZZJzSce64LDyHQjlspE_ZqEOJ1yg74FXA" 
-                alt="close up of hand pouring steamed milk into coffee, captured in a moment of stillness"
+              >
+                <ImageWithFallback 
+                  src={storyInterior}
+                  alt="minimalist cafe interior with soft morning light hitting clean wooden tables and stone walls"
+                  className="w-full h-full object-cover"
+                  wrapperClassName="w-full h-full"
+                />
+              </motion.div>
+              <motion.div
+                className="rounded-3xl overflow-hidden w-full h-80"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-              />
+              >
+                <ImageWithFallback 
+                  src={storyPour}
+                  alt="close up of hand pouring steamed milk into coffee, captured in a moment of stillness"
+                  className="w-full h-full object-cover"
+                  wrapperClassName="w-full h-full"
+                />
+              </motion.div>
             </div>
           </motion.div>
 

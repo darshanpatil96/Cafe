@@ -60,8 +60,11 @@ const LiquidTransition = () => {
   };
 
   return (
-    <div 
+    // z-[9990] keeps it above all UI layers but below the cursor (z: 2147483647)
+    // pointer-events-none ensures it never intercepts mouse events
+    <div
       className={`fixed inset-0 z-[9990] pointer-events-none transition-opacity duration-300 ${isTransitioning ? 'opacity-100' : 'opacity-0'}`}
+      style={{ isolation: 'auto' }}
     >
       <svg 
         className="w-full h-full preserve-3d" 

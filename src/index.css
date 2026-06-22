@@ -5,12 +5,26 @@
 @tailwind utilities;
 
 @layer base {
-  body, a, button, [data-cursor] {
+  /* Hide native cursor on every interactive element across the entire app */
+  *,
+  *::before,
+  *::after,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"],
+  [tabindex],
+  [data-cursor],
+  [contenteditable] {
     cursor: none !important;
   }
-  
+
   body {
     @apply bg-stone-950 text-stone-100 font-sans antialiased overflow-x-hidden;
+    cursor: none !important;
   }
 }
 
